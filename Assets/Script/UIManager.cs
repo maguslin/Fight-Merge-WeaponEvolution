@@ -54,6 +54,8 @@ public class UIManager : MonoBehaviour
     public void Start()
     {
         instance = this;
+
+        Application.targetFrameRate = 90;
         if (PlayerPrefs.GetInt("Level") == 0)
         {
             PlayerPrefs.SetInt("Level", 1);

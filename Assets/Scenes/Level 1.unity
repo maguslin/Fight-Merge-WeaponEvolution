@@ -3971,7 +3971,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &570136427
 Transform:
   m_ObjectHideFlags: 0
@@ -5702,7 +5702,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 5, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6467,7 +6467,7 @@ PrefabInstance:
     - target: {fileID: 6757793835260282540, guid: b816531143bc05f4c9c8dad5ab0a4868,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b816531143bc05f4c9c8dad5ab0a4868, type: 3}
@@ -10495,7 +10495,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1531544228
 Transform:
   m_ObjectHideFlags: 0
@@ -10551,7 +10551,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 5, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -10908,7 +10908,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 65418b621ba9f2f41a1d9eecfd56c66e, type: 3}
   - {fileID: 21300000, guid: 568c39226255674479fed32afa7ff444, type: 3}
   - {fileID: 21300000, guid: 93f2ae02d0f98504689fd225731cc0a7, type: 3}
-  TilePrefab: {fileID: 8906205295287210887, guid: 2601152f5be99ba4fb241f3000626ba6,
+  TilePrefab: {fileID: 8906205295287210887, guid: f9ed03e5e17dafd43821e8ae5a76ad15,
     type: 3}
   GridDimension: 5
   Distance: 1
@@ -12864,7 +12864,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 5, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -13506,7 +13506,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 5, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -14406,6 +14406,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Knife
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895061776721073615, guid: 416b94b55a7ae1548b71a319363fcf21,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 416b94b55a7ae1548b71a319363fcf21, type: 3}

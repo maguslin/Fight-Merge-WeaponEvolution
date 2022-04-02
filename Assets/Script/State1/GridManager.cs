@@ -26,6 +26,7 @@ public class GridManager : MonoBehaviour
     public int StartingMoves = 50;
     private int _numMoves;
     public int matchCount;
+ 
 
 
     public int NumMoves
@@ -527,9 +528,12 @@ public class GridManager : MonoBehaviour
 
     IEnumerator Branch()
     {
-        GameObject item = Instantiate(Resources.Load<GameObject>("Branch"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
-        item.transform.DOMove(new Vector3(weapons[0].transform.position.x, weapons[0].transform.position.y, 1), 2f);
-        Destroy(item, 2f);
+        if (matchCount <= 3)
+        {
+            GameObject item = Instantiate(Resources.Load<GameObject>("Spear"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
+            item.transform.DOMove(new Vector3(weapons[4].transform.position.x, weapons[4].transform.position.y, 1), 2f);
+            Destroy(item, 2f);
+        }
         yield return new WaitForSeconds(1.5f);
         weapons[0].SetActive(true);
         weapons[1].SetActive(false);
@@ -543,9 +547,12 @@ public class GridManager : MonoBehaviour
     }
     IEnumerator Billiard()
     {
-        GameObject item = Instantiate(Resources.Load<GameObject>("Billiard"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
-        item.transform.DOMove(new Vector3(weapons[1].transform.position.x, weapons[1].transform.position.y, 1), 2f);
-        Destroy(item, 2f);
+        if (matchCount <= 3)
+        {
+            GameObject item = Instantiate(Resources.Load<GameObject>("Spear"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
+            item.transform.DOMove(new Vector3(weapons[4].transform.position.x, weapons[4].transform.position.y, 1), 2f);
+            Destroy(item, 2f);
+        }
         yield return new WaitForSeconds(1.5f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(true);
@@ -560,9 +567,12 @@ public class GridManager : MonoBehaviour
     IEnumerator Knife()
     {
 
-        GameObject item = Instantiate(Resources.Load<GameObject>("Knife"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
-        item.transform.DOMove(new Vector3(weapons[2].transform.position.x, weapons[2].transform.position.y, 1), 2f);
-        Destroy(item, 2f);
+        if (matchCount <= 3)
+        {
+            GameObject item = Instantiate(Resources.Load<GameObject>("Spear"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
+            item.transform.DOMove(new Vector3(weapons[4].transform.position.x, weapons[4].transform.position.y, 1), 2f);
+            Destroy(item, 2f);
+        }
         yield return new WaitForSeconds(1.5f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(false);
@@ -577,9 +587,12 @@ public class GridManager : MonoBehaviour
     IEnumerator Sword()
     {
 
-        GameObject item = Instantiate(Resources.Load<GameObject>("Sword"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
-        item.transform.DOMove(new Vector3(weapons[3].transform.position.x, weapons[3].transform.position.y, 1), 2f);
-        Destroy(item, 2f);
+        if (matchCount <= 3)
+        {
+            GameObject item = Instantiate(Resources.Load<GameObject>("Spear"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
+            item.transform.DOMove(new Vector3(weapons[4].transform.position.x, weapons[4].transform.position.y, 1), 2f);
+            Destroy(item, 2f);
+        }
         yield return new WaitForSeconds(1.5f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(false);
@@ -593,9 +606,13 @@ public class GridManager : MonoBehaviour
     }
     IEnumerator Spear()
     {
-        GameObject item = Instantiate(Resources.Load<GameObject>("Spear"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
-        item.transform.DOMove(new Vector3(weapons[4].transform.position.x, weapons[4].transform.position.y, 1), 2f);
-        Destroy(item, 2f);
+       
+        if (matchCount <= 3)
+        {
+            GameObject item = Instantiate(Resources.Load<GameObject>("Spear"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
+            item.transform.DOMove(new Vector3(weapons[4].transform.position.x, weapons[4].transform.position.y, 1), 2f);
+            Destroy(item, 2f);
+        }
         yield return new WaitForSeconds(1.5f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(false);

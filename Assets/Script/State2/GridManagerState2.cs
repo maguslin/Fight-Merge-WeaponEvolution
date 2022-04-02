@@ -209,12 +209,21 @@ public class GridManagerState2 : MonoBehaviour
                     {
                         matchedTiles.UnionWith(horizontalMatches);
                         matchedTiles.Add(current);
+                        StartCoroutine(Arrow());
+                        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[0].transform.position, Quaternion.identity), 0.25f);
+
+                    }
+
+                    if (Sprites[1] == current.sprite && Input.GetMouseButton(0))
+                    {
+                        matchedTiles.UnionWith(horizontalMatches);
+                        matchedTiles.Add(current);
                         StartCoroutine(Gun());
                         Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[1].transform.position, Quaternion.identity), 0.25f);
 
                     }
 
-                    if (Sprites[1] == current.sprite && Input.GetMouseButton(0))
+                    if (Sprites[2] == current.sprite && Input.GetMouseButton(0))
                     {
                         matchedTiles.UnionWith(horizontalMatches);
                         matchedTiles.Add(current);
@@ -223,21 +232,12 @@ public class GridManagerState2 : MonoBehaviour
 
                     }
 
-                    if (Sprites[2] == current.sprite && Input.GetMouseButton(0))
+                    if (Sprites[3] == current.sprite && Input.GetMouseButton(0))
                     {
                         matchedTiles.UnionWith(horizontalMatches);
                         matchedTiles.Add(current);
                         StartCoroutine(Sniper());
                         Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[3].transform.position, Quaternion.identity), 0.25f);
-
-                    }
-
-                    if (Sprites[3] == current.sprite && Input.GetMouseButton(0))
-                    {
-                        matchedTiles.UnionWith(horizontalMatches);
-                        matchedTiles.Add(current);
-                        StartCoroutine(Bomb());
-                        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[4].transform.position, Quaternion.identity), 0.25f);
 
 
                     }
@@ -246,8 +246,8 @@ public class GridManagerState2 : MonoBehaviour
                     {
                         matchedTiles.UnionWith(horizontalMatches);
                         matchedTiles.Add(current);
-                        StartCoroutine(Arrow());
-                        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[0].transform.position, Quaternion.identity), 0.25f);
+                        StartCoroutine(Bomb());
+                        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[4].transform.position, Quaternion.identity), 0.25f);
 
                     }
 
@@ -263,12 +263,21 @@ public class GridManagerState2 : MonoBehaviour
                     {
                         matchedTiles.UnionWith(verticalMatches);
                         matchedTiles.Add(current);
+                        StartCoroutine(Arrow());
+                        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[0].transform.position, Quaternion.identity), 0.25f);
+
+
+                    }
+                    if (Sprites[1] == current.sprite && Input.GetMouseButton(0))
+                    {
+                        matchedTiles.UnionWith(horizontalMatches);
+                        matchedTiles.Add(current);
                         StartCoroutine(Gun());
                         Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[1].transform.position, Quaternion.identity), 0.25f);
 
 
                     }
-                    if (Sprites[1] == current.sprite && Input.GetMouseButton(0))
+                    if (Sprites[2] == current.sprite && Input.GetMouseButton(0))
                     {
                         matchedTiles.UnionWith(horizontalMatches);
                         matchedTiles.Add(current);
@@ -277,7 +286,7 @@ public class GridManagerState2 : MonoBehaviour
 
 
                     }
-                    if (Sprites[2] == current.sprite && Input.GetMouseButton(0))
+                    if (Sprites[3] == current.sprite && Input.GetMouseButton(0))
                     {
                         matchedTiles.UnionWith(horizontalMatches);
                         matchedTiles.Add(current);
@@ -286,21 +295,12 @@ public class GridManagerState2 : MonoBehaviour
 
 
                     }
-                    if (Sprites[3] == current.sprite && Input.GetMouseButton(0))
+                    if (Sprites[4] == current.sprite && Input.GetMouseButton(0))
                     {
                         matchedTiles.UnionWith(horizontalMatches);
                         matchedTiles.Add(current);
                         StartCoroutine(Bomb());
                         Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[4].transform.position, Quaternion.identity), 0.25f);
-
-
-                    }
-                    if (Sprites[4] == current.sprite && Input.GetMouseButton(0))
-                    {
-                        matchedTiles.UnionWith(horizontalMatches);
-                        matchedTiles.Add(current);
-                        StartCoroutine(Arrow());
-                        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[0].transform.position, Quaternion.identity), 0.25f);
 
                     }
 
@@ -526,9 +526,13 @@ public class GridManagerState2 : MonoBehaviour
 
     IEnumerator Arrow()
     {
-        GameObject item = Instantiate(Resources.Load<GameObject>("Bow"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
-        item.transform.DOMove(new Vector3(weapons[0].transform.position.x, weapons[0].transform.position.y, 1), 2f);
-        Destroy(item, 2f);
+
+        if (matchCount<=3)
+        {
+            GameObject item = Instantiate(Resources.Load<GameObject>("Bow"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
+            item.transform.DOMove(new Vector3(weapons[0].transform.position.x, weapons[0].transform.position.y, 1), 2f);
+            Destroy(item, 2f);
+        }
         yield return new WaitForSeconds(1f);
         weapons[0].SetActive(true);
         weapons[1].SetActive(false);
@@ -542,9 +546,12 @@ public class GridManagerState2 : MonoBehaviour
     }
     IEnumerator Gun()
     {
-        GameObject item = Instantiate(Resources.Load<GameObject>("Gun"), new Vector3(0, -2, -1), Quaternion.Euler(0, 180, 0));
-        item.transform.DOMove(new Vector3(weapons[1].transform.position.x, weapons[1].transform.position.y, 1), 2f);
-        Destroy(item, 2f);
+        if (matchCount <= 3)
+        {
+            GameObject item = Instantiate(Resources.Load<GameObject>("Bow"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
+            item.transform.DOMove(new Vector3(weapons[0].transform.position.x, weapons[0].transform.position.y, 1), 2f);
+            Destroy(item, 2f);
+        }
         yield return new WaitForSeconds(1f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(true);
@@ -558,9 +565,12 @@ public class GridManagerState2 : MonoBehaviour
     }
     IEnumerator Rifle()
     {
-        GameObject item = Instantiate(Resources.Load<GameObject>("Rifle"), new Vector3(0, -2, -1), Quaternion.Euler(0, 90, 0));
-        item.transform.DOMove(new Vector3(weapons[2].transform.position.x, weapons[2].transform.position.y, 1), 2f);
-        Destroy(item, 2f);
+        if (matchCount <= 3)
+        {
+            GameObject item = Instantiate(Resources.Load<GameObject>("Bow"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
+            item.transform.DOMove(new Vector3(weapons[0].transform.position.x, weapons[0].transform.position.y, 1), 2f);
+            Destroy(item, 2f);
+        }
         yield return new WaitForSeconds(1f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(false);
@@ -574,9 +584,12 @@ public class GridManagerState2 : MonoBehaviour
     }
     IEnumerator Sniper()
     {
-        GameObject item = Instantiate(Resources.Load<GameObject>("Sniper"), new Vector3(0, -2, -1), Quaternion.Euler(0, -180, 0));
-        item.transform.DOMove(new Vector3(weapons[0].transform.position.x, weapons[0].transform.position.y, 1), 2f);
-        Destroy(item, 2f);
+        if (matchCount <= 3)
+        {
+            GameObject item = Instantiate(Resources.Load<GameObject>("Bow"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
+            item.transform.DOMove(new Vector3(weapons[0].transform.position.x, weapons[0].transform.position.y, 1), 2f);
+            Destroy(item, 2f);
+        }
         yield return new WaitForSeconds(1f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(false);
@@ -590,9 +603,12 @@ public class GridManagerState2 : MonoBehaviour
     }
     IEnumerator Bomb()
     {
-        GameObject item = Instantiate(Resources.Load<GameObject>("Grenade"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, 0));
-        item.transform.DOMove(new Vector3(weapons[0].transform.position.x, weapons[0].transform.position.y, 1), 2f);
-        Destroy(item, 2f);
+        if (matchCount <= 3)
+        {
+            GameObject item = Instantiate(Resources.Load<GameObject>("Bow"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
+            item.transform.DOMove(new Vector3(weapons[0].transform.position.x, weapons[0].transform.position.y, 1), 2f);
+            Destroy(item, 2f);
+        }
         yield return new WaitForSeconds(1f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(false);
