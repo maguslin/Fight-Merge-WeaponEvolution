@@ -548,7 +548,7 @@ public class GridManagerState2 : MonoBehaviour
     {
         if (matchCount <= 3)
         {
-            GameObject item = Instantiate(Resources.Load<GameObject>("Bow"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
+            GameObject item = Instantiate(Resources.Load<GameObject>("Gun"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
             item.transform.DOMove(new Vector3(weapons[0].transform.position.x, weapons[0].transform.position.y, 1), 2f);
             Destroy(item, 2f);
         }
@@ -567,7 +567,7 @@ public class GridManagerState2 : MonoBehaviour
     {
         if (matchCount <= 3)
         {
-            GameObject item = Instantiate(Resources.Load<GameObject>("Bow"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
+            GameObject item = Instantiate(Resources.Load<GameObject>("Rifle"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
             item.transform.DOMove(new Vector3(weapons[0].transform.position.x, weapons[0].transform.position.y, 1), 2f);
             Destroy(item, 2f);
         }
@@ -586,7 +586,7 @@ public class GridManagerState2 : MonoBehaviour
     {
         if (matchCount <= 3)
         {
-            GameObject item = Instantiate(Resources.Load<GameObject>("Bow"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
+            GameObject item = Instantiate(Resources.Load<GameObject>("Sniper"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
             item.transform.DOMove(new Vector3(weapons[0].transform.position.x, weapons[0].transform.position.y, 1), 2f);
             Destroy(item, 2f);
         }
@@ -605,7 +605,7 @@ public class GridManagerState2 : MonoBehaviour
     {
         if (matchCount <= 3)
         {
-            GameObject item = Instantiate(Resources.Load<GameObject>("Bow"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
+            GameObject item = Instantiate(Resources.Load<GameObject>("Grenade"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
             item.transform.DOMove(new Vector3(weapons[0].transform.position.x, weapons[0].transform.position.y, 1), 2f);
             Destroy(item, 2f);
         }

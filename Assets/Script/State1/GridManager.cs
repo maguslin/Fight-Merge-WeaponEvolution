@@ -530,7 +530,7 @@ public class GridManager : MonoBehaviour
     {
         if (matchCount <= 3)
         {
-            GameObject item = Instantiate(Resources.Load<GameObject>("Spear"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
+            GameObject item = Instantiate(Resources.Load<GameObject>("Branch"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
             item.transform.DOMove(new Vector3(weapons[4].transform.position.x, weapons[4].transform.position.y, 1), 2f);
             Destroy(item, 2f);
         }
@@ -549,7 +549,7 @@ public class GridManager : MonoBehaviour
     {
         if (matchCount <= 3)
         {
-            GameObject item = Instantiate(Resources.Load<GameObject>("Spear"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
+            GameObject item = Instantiate(Resources.Load<GameObject>("Billiard"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
             item.transform.DOMove(new Vector3(weapons[4].transform.position.x, weapons[4].transform.position.y, 1), 2f);
             Destroy(item, 2f);
         }
@@ -569,7 +569,7 @@ public class GridManager : MonoBehaviour
 
         if (matchCount <= 3)
         {
-            GameObject item = Instantiate(Resources.Load<GameObject>("Spear"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
+            GameObject item = Instantiate(Resources.Load<GameObject>("Knife"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
             item.transform.DOMove(new Vector3(weapons[4].transform.position.x, weapons[4].transform.position.y, 1), 2f);
             Destroy(item, 2f);
         }
@@ -589,7 +589,7 @@ public class GridManager : MonoBehaviour
 
         if (matchCount <= 3)
         {
-            GameObject item = Instantiate(Resources.Load<GameObject>("Spear"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
+            GameObject item = Instantiate(Resources.Load<GameObject>("Sword"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
             item.transform.DOMove(new Vector3(weapons[4].transform.position.x, weapons[4].transform.position.y, 1), 2f);
             Destroy(item, 2f);
         }
