@@ -79,8 +79,8 @@ public class UIManager : MonoBehaviour
     }
 
 
-    public void NextLevel()
-    {
+   public void NextLevel()
+   {
         // ElephantSDK.Elephant.LevelCompleted(PlayerPrefs.GetInt("Level"));
         PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
         if (PlayerPrefs.GetInt("Level") >= Application.levelCount)

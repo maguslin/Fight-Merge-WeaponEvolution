@@ -6467,7 +6467,7 @@ PrefabInstance:
     - target: {fileID: 6757793835260282540, guid: b816531143bc05f4c9c8dad5ab0a4868,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b816531143bc05f4c9c8dad5ab0a4868, type: 3}
@@ -13167,7 +13167,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LEVEL 1
+  m_Text: LEVEL 3
 --- !u!222 &2111686205
 CanvasRenderer:
   m_ObjectHideFlags: 0

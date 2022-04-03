@@ -338,6 +338,7 @@ public class GridManager : MonoBehaviour
         {
             case 3:
                 trail = Instantiate(Resources.Load<GameObject>("ExplosionTrail3"), Grid[col, row].transform.position, Quaternion.identity);
+                MMVibrationManager.Haptic(HapticTypes.Success);
                 Destroy(Instantiate(Resources.Load<GameObject>("ExplosionParticle3"), Grid[col, row].transform.position, Quaternion.identity), 2f);
                 Grid[col, row].transform.DOShakeScale(1f, 0.5f);
 
@@ -364,6 +365,7 @@ public class GridManager : MonoBehaviour
                 }
 
                 trail = Instantiate(Resources.Load<GameObject>("ExplosionTrail4"), new Vector3(Grid[col, row].transform.position.x, Grid[col, row].transform.position.y, -0.6f), Quaternion.identity);
+                MMVibrationManager.Haptic(HapticTypes.Success);
                 Destroy(Instantiate(Resources.Load<GameObject>("ExplosionParticle4"), new Vector3(Grid[col, row].transform.position.x, Grid[col, row].transform.position.y, -0.6f), Quaternion.identity), 2f);
                 Grid[col, row].transform.DOShakeScale(1f, 0.5f);
 
@@ -395,6 +397,7 @@ public class GridManager : MonoBehaviour
                 }
 
                 trail = Instantiate(Resources.Load<GameObject>("ExplosionTrail5"), new Vector3(Grid[col, row].transform.position.x, Grid[col, row].transform.position.y, -0.9f), Quaternion.identity);
+                MMVibrationManager.Haptic(HapticTypes.Success);
                 Destroy(Instantiate(Resources.Load<GameObject>("ExplosionParticle5"), new Vector3(Grid[col, row].transform.position.x, Grid[col, row].transform.position.y, -0.9f), Quaternion.identity), 2f);
                 Grid[col, row].transform.DOShakeScale(1f, 0.5f);
 
@@ -531,10 +534,10 @@ public class GridManager : MonoBehaviour
         if (matchCount <= 3)
         {
             GameObject item = Instantiate(Resources.Load<GameObject>("Branch"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
-            item.transform.DOMove(new Vector3(weapons[4].transform.position.x, weapons[4].transform.position.y, 1), 2f);
+            item.transform.DOMove(new Vector3(weapons[0].transform.position.x, weapons[0].transform.position.y, 1), 2f);
             Destroy(item, 2f);
         }
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         weapons[0].SetActive(true);
         weapons[1].SetActive(false);
         weapons[2].SetActive(false);
@@ -542,7 +545,8 @@ public class GridManager : MonoBehaviour
         weapons[4].SetActive(false);
         Player.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("BranchControllerPlayer") as RuntimeAnimatorController;
         Player.GetComponent<Animator>().SetTrigger("Branch");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
+        weapons[0].SetActive(false);
         Player.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("Idle") as RuntimeAnimatorController;
     }
     IEnumerator Billiard()
@@ -550,10 +554,10 @@ public class GridManager : MonoBehaviour
         if (matchCount <= 3)
         {
             GameObject item = Instantiate(Resources.Load<GameObject>("Billiard"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
-            item.transform.DOMove(new Vector3(weapons[4].transform.position.x, weapons[4].transform.position.y, 1), 2f);
+            item.transform.DOMove(new Vector3(weapons[1].transform.position.x, weapons[1].transform.position.y, 1), 2f);
             Destroy(item, 2f);
         }
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(true);
         weapons[2].SetActive(false);
@@ -561,7 +565,8 @@ public class GridManager : MonoBehaviour
         weapons[4].SetActive(false);
         Player.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("BilliardControllerPlayer") as RuntimeAnimatorController;
         Player.GetComponent<Animator>().SetTrigger("Billiard");
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2.5f);
+        weapons[1].SetActive(false);
         Player.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("Idle") as RuntimeAnimatorController;
     }
     IEnumerator Knife()
@@ -570,10 +575,10 @@ public class GridManager : MonoBehaviour
         if (matchCount <= 3)
         {
             GameObject item = Instantiate(Resources.Load<GameObject>("Knife"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
-            item.transform.DOMove(new Vector3(weapons[4].transform.position.x, weapons[4].transform.position.y, 1), 2f);
+            item.transform.DOMove(new Vector3(weapons[2].transform.position.x, weapons[2].transform.position.y, 1), 2f);
             Destroy(item, 2f);
         }
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(false);
         weapons[2].SetActive(true);
@@ -581,7 +586,8 @@ public class GridManager : MonoBehaviour
         weapons[4].SetActive(false);
         Player.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("KnifeControllerPlayer") as RuntimeAnimatorController;
         Player.GetComponent<Animator>().SetTrigger("Knife");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
+        weapons[2].SetActive(false);
         Player.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("Idle") as RuntimeAnimatorController;
     }
     IEnumerator Sword()
@@ -590,10 +596,10 @@ public class GridManager : MonoBehaviour
         if (matchCount <= 3)
         {
             GameObject item = Instantiate(Resources.Load<GameObject>("Sword"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
-            item.transform.DOMove(new Vector3(weapons[4].transform.position.x, weapons[4].transform.position.y, 1), 2f);
+            item.transform.DOMove(new Vector3(weapons[3].transform.position.x, weapons[3].transform.position.y, 1), 2f);
             Destroy(item, 2f);
         }
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(false);
         weapons[2].SetActive(false);
@@ -601,7 +607,8 @@ public class GridManager : MonoBehaviour
         weapons[4].SetActive(false);
         Player.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("SwordControllerPlayer") as RuntimeAnimatorController;
         Player.GetComponent<Animator>().SetTrigger("Sword");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
+        weapons[3].SetActive(false);
         Player.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("Idle") as RuntimeAnimatorController;
     }
     IEnumerator Spear()
@@ -613,7 +620,7 @@ public class GridManager : MonoBehaviour
             item.transform.DOMove(new Vector3(weapons[4].transform.position.x, weapons[4].transform.position.y, 1), 2f);
             Destroy(item, 2f);
         }
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(false);
         weapons[2].SetActive(false);
@@ -621,8 +628,10 @@ public class GridManager : MonoBehaviour
         weapons[4].SetActive(true);
         Player.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("SpearControllerPlayer") as RuntimeAnimatorController;
         Player.GetComponent<Animator>().SetTrigger("Spear");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
+        weapons[4].SetActive(false);
         Player.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("Idle") as RuntimeAnimatorController;
+
     }
 
 

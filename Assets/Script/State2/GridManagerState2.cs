@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using MoreMountains.NiceVibrations;
 
 public class GridManagerState2 : MonoBehaviour
 {
@@ -210,6 +211,7 @@ public class GridManagerState2 : MonoBehaviour
                         matchedTiles.UnionWith(horizontalMatches);
                         matchedTiles.Add(current);
                         StartCoroutine(Arrow());
+                        MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[0].transform.position, Quaternion.identity), 0.25f);
 
                     }
@@ -218,6 +220,7 @@ public class GridManagerState2 : MonoBehaviour
                     {
                         matchedTiles.UnionWith(horizontalMatches);
                         matchedTiles.Add(current);
+                        MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Gun());
                         Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[1].transform.position, Quaternion.identity), 0.25f);
 
@@ -236,6 +239,7 @@ public class GridManagerState2 : MonoBehaviour
                     {
                         matchedTiles.UnionWith(horizontalMatches);
                         matchedTiles.Add(current);
+                        MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Sniper());
                         Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[3].transform.position, Quaternion.identity), 0.25f);
 
@@ -246,6 +250,7 @@ public class GridManagerState2 : MonoBehaviour
                     {
                         matchedTiles.UnionWith(horizontalMatches);
                         matchedTiles.Add(current);
+                        MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Bomb());
                         Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[4].transform.position, Quaternion.identity), 0.25f);
 
@@ -263,6 +268,7 @@ public class GridManagerState2 : MonoBehaviour
                     {
                         matchedTiles.UnionWith(verticalMatches);
                         matchedTiles.Add(current);
+                        MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Arrow());
                         Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[0].transform.position, Quaternion.identity), 0.25f);
 
@@ -272,6 +278,7 @@ public class GridManagerState2 : MonoBehaviour
                     {
                         matchedTiles.UnionWith(horizontalMatches);
                         matchedTiles.Add(current);
+                        MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Gun());
                         Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[1].transform.position, Quaternion.identity), 0.25f);
 
@@ -281,6 +288,7 @@ public class GridManagerState2 : MonoBehaviour
                     {
                         matchedTiles.UnionWith(horizontalMatches);
                         matchedTiles.Add(current);
+                        MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Rifle());
                         Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[2].transform.position, Quaternion.identity), 0.25f);
 
@@ -290,6 +298,7 @@ public class GridManagerState2 : MonoBehaviour
                     {
                         matchedTiles.UnionWith(horizontalMatches);
                         matchedTiles.Add(current);
+                        MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Sniper());
                         Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[3].transform.position, Quaternion.identity), 0.25f);
 
@@ -299,6 +308,7 @@ public class GridManagerState2 : MonoBehaviour
                     {
                         matchedTiles.UnionWith(horizontalMatches);
                         matchedTiles.Add(current);
+                        MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Bomb());
                         Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[4].transform.position, Quaternion.identity), 0.25f);
 
@@ -328,6 +338,7 @@ public class GridManagerState2 : MonoBehaviour
         {
             case 3:
                 trail = Instantiate(Resources.Load<GameObject>("ExplosionTrail3"), Grid[col, row].transform.position, Quaternion.identity);
+                MMVibrationManager.Haptic(HapticTypes.Success);
                 Destroy(Instantiate(Resources.Load<GameObject>("ExplosionParticle3"), Grid[col, row].transform.position, Quaternion.identity), 2f);
                 Grid[col, row].transform.DOShakeScale(1f, 0.5f);
 
@@ -362,6 +373,7 @@ public class GridManagerState2 : MonoBehaviour
                 }
 
                 trail = Instantiate(Resources.Load<GameObject>("ExplosionTrail4"), new Vector3(Grid[col, row].transform.position.x, Grid[col, row].transform.position.y, -0.6f), Quaternion.identity);
+                MMVibrationManager.Haptic(HapticTypes.Success);
                 Destroy(Instantiate(Resources.Load<GameObject>("ExplosionParticle4"), new Vector3(Grid[col, row].transform.position.x, Grid[col, row].transform.position.y, -0.6f), Quaternion.identity), 2f);
                 Grid[col, row].transform.DOShakeScale(1f, 0.5f);
 
@@ -393,6 +405,7 @@ public class GridManagerState2 : MonoBehaviour
                 }
 
                 trail = Instantiate(Resources.Load<GameObject>("ExplosionTrail5"), new Vector3(Grid[col, row].transform.position.x, Grid[col, row].transform.position.y, -0.9f), Quaternion.identity);
+                MMVibrationManager.Haptic(HapticTypes.Success);
                 Destroy(Instantiate(Resources.Load<GameObject>("ExplosionParticle5"), new Vector3(Grid[col, row].transform.position.x, Grid[col, row].transform.position.y, -0.9f), Quaternion.identity), 2f);
                 Grid[col, row].transform.DOShakeScale(1f, 0.5f);
 
@@ -533,7 +546,7 @@ public class GridManagerState2 : MonoBehaviour
             item.transform.DOMove(new Vector3(weapons[0].transform.position.x, weapons[0].transform.position.y, 1), 2f);
             Destroy(item, 2f);
         }
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         weapons[0].SetActive(true);
         weapons[1].SetActive(false);
         weapons[2].SetActive(false);
@@ -543,16 +556,17 @@ public class GridManagerState2 : MonoBehaviour
         Player.GetComponent<Animator>().SetTrigger("Arrow");
         yield return new WaitForSeconds(4.5f);
         Player.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("Idle") as RuntimeAnimatorController;
+        weapons[0].SetActive(false);
     }
     IEnumerator Gun()
     {
         if (matchCount <= 3)
         {
-            GameObject item = Instantiate(Resources.Load<GameObject>("Gun"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
-            item.transform.DOMove(new Vector3(weapons[0].transform.position.x, weapons[0].transform.position.y, 1), 2f);
+            GameObject item = Instantiate(Resources.Load<GameObject>("Gun"), new Vector3(0, -2, -1), Quaternion.Euler(0, -180, 0));
+            item.transform.DOMove(new Vector3(weapons[1].transform.position.x, weapons[1].transform.position.y, 1), 2f);
             Destroy(item, 2f);
         }
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(true);
         weapons[2].SetActive(false);
@@ -562,16 +576,17 @@ public class GridManagerState2 : MonoBehaviour
         Player.GetComponent<Animator>().SetTrigger("Gun");
         yield return new WaitForSeconds(1f);
         Player.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("Idle") as RuntimeAnimatorController;
+        weapons[1].SetActive(false);
     }
     IEnumerator Rifle()
     {
         if (matchCount <= 3)
         {
-            GameObject item = Instantiate(Resources.Load<GameObject>("Rifle"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
-            item.transform.DOMove(new Vector3(weapons[0].transform.position.x, weapons[0].transform.position.y, 1), 2f);
+            GameObject item = Instantiate(Resources.Load<GameObject>("Rifle"), new Vector3(0, -2, -1), Quaternion.Euler(0, 90, 0));
+            item.transform.DOMove(new Vector3(weapons[2].transform.position.x, weapons[2].transform.position.y, 1), 2f);
             Destroy(item, 2f);
         }
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(false);
         weapons[2].SetActive(true);
@@ -581,16 +596,17 @@ public class GridManagerState2 : MonoBehaviour
         Player.GetComponent<Animator>().SetTrigger("Rifle");
         yield return new WaitForSeconds(1.1f);
         Player.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("Idle") as RuntimeAnimatorController;
+        weapons[2].SetActive(false);
     }
     IEnumerator Sniper()
     {
         if (matchCount <= 3)
         {
-            GameObject item = Instantiate(Resources.Load<GameObject>("Sniper"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
-            item.transform.DOMove(new Vector3(weapons[0].transform.position.x, weapons[0].transform.position.y, 1), 2f);
+            GameObject item = Instantiate(Resources.Load<GameObject>("Sniper"), new Vector3(0, -2, -1), Quaternion.Euler(0, 180, 0));
+            item.transform.DOMove(new Vector3(weapons[3].transform.position.x, weapons[3].transform.position.y, 1), 2f);
             Destroy(item, 2f);
         }
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(false);
         weapons[2].SetActive(false);
@@ -600,16 +616,17 @@ public class GridManagerState2 : MonoBehaviour
         Player.GetComponent<Animator>().SetTrigger("Sniper");
         yield return new WaitForSeconds(1.5f);
         Player.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("Idle") as RuntimeAnimatorController;
+        weapons[3].SetActive(false);
     }
     IEnumerator Bomb()
     {
         if (matchCount <= 3)
         {
-            GameObject item = Instantiate(Resources.Load<GameObject>("Grenade"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
-            item.transform.DOMove(new Vector3(weapons[0].transform.position.x, weapons[0].transform.position.y, 1), 2f);
+            GameObject item = Instantiate(Resources.Load<GameObject>("Grenade"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, 0));
+            item.transform.DOMove(new Vector3(weapons[4].transform.position.x, weapons[4].transform.position.y, 1), 2f);
             Destroy(item, 2f);
         }
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(false);
         weapons[2].SetActive(false);
@@ -619,6 +636,7 @@ public class GridManagerState2 : MonoBehaviour
         Player.GetComponent<Animator>().SetTrigger("Bomb");
         yield return new WaitForSeconds(1.5f);
         Player.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("Idle") as RuntimeAnimatorController;
+        weapons[4].SetActive(false);
     }
 
 
