@@ -56,7 +56,7 @@ public class UIManager : MonoBehaviour
         instance = this;
 
         Application.targetFrameRate = 90;
-        if (PlayerPrefs.GetInt("Level") == 0)
+       /* if (PlayerPrefs.GetInt("Level") == 0)
         {
             PlayerPrefs.SetInt("Level", 1);
         }
@@ -67,7 +67,7 @@ public class UIManager : MonoBehaviour
             {
                 Application.LoadLevel(PlayerPrefs.GetInt("Level"));
             }
-        }
+        }*/
         levelText.text = "LEVEL " + PlayerPrefs.GetInt("Level");
         //ElephantSDK.Elephant.LevelStarted(PlayerPrefs.GetInt("Level"));
     }

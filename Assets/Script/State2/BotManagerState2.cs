@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using MoreMountains.NiceVibrations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -108,6 +109,7 @@ public class BotManagerState2 : MonoBehaviour
     {
         Debug.Log("Bow");
         BowAttack();
+        MMVibrationManager.Haptic(HapticTypes.LightImpact);
         StartCoroutine(BowDamage());
         StartCoroutine(DamageTextClear());
         Destroy(Instantiate(Resources.Load("SwordHitRed"), new Vector3(Player.transform.position.x, Player.transform.position.y + 0.8f, Player.transform.position.z), Quaternion.identity), 1f);
@@ -117,6 +119,7 @@ public class BotManagerState2 : MonoBehaviour
     {
         Debug.Log("Gun");
         GunAttack();
+        MMVibrationManager.Haptic(HapticTypes.LightImpact);
         StartCoroutine(GunDamage());
         StartCoroutine(DamageTextClear());
         Destroy(Instantiate(Resources.Load("SwordHitRed"), new Vector3(Player.transform.position.x, Player.transform.position.y + 0.8f, Player.transform.position.z), Quaternion.identity), 1f);
@@ -126,6 +129,7 @@ public class BotManagerState2 : MonoBehaviour
     {
         Debug.Log("Rifle");
         RifleAttack();
+        MMVibrationManager.Haptic(HapticTypes.LightImpact);
         StartCoroutine(RifleDamage());
         StartCoroutine(DamageTextClear());
         Destroy(Instantiate(Resources.Load("SwordHitRed"), new Vector3(Player.transform.position.x, Player.transform.position.y + 0.8f, Player.transform.position.z), Quaternion.identity), 1f);
@@ -135,6 +139,7 @@ public class BotManagerState2 : MonoBehaviour
     {
         Debug.Log("Sniper");
         SniperAttack();
+        MMVibrationManager.Haptic(HapticTypes.LightImpact);
         StartCoroutine(SniperDamage());
         StartCoroutine(DamageTextClear());
         Destroy(Instantiate(Resources.Load("SwordHitRed"), new Vector3(Player.transform.position.x, Player.transform.position.y + 0.8f, Player.transform.position.z), Quaternion.identity), 1f);
@@ -144,6 +149,7 @@ public class BotManagerState2 : MonoBehaviour
     {
         Debug.Log("Greande");
         BombAttack();
+        MMVibrationManager.Haptic(HapticTypes.LightImpact);
         StartCoroutine(BombDamage());
         StartCoroutine(DamageTextClear());
         Destroy(Instantiate(Resources.Load("SwordHitRed"), new Vector3(Player.transform.position.x, Player.transform.position.y + 0.8f, Player.transform.position.z), Quaternion.identity), 1f);
@@ -175,7 +181,7 @@ public class BotManagerState2 : MonoBehaviour
     //Bot Player Animation Clip Script
     IEnumerator Bow()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4.5f);
         weapon[0].SetActive(true);
         Destroy(Instantiate(Resources.Load("SelectWeapon"), weapon[0].transform.position, Quaternion.identity), 0.25f);
         gameObject.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("BowControllerBot") as RuntimeAnimatorController;
@@ -185,42 +191,42 @@ public class BotManagerState2 : MonoBehaviour
     }
     IEnumerator Gun()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
         weapon[1].SetActive(true);
         Destroy(Instantiate(Resources.Load("SelectWeapon"), weapon[0].transform.position, Quaternion.identity), 0.25f);
         gameObject.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("GunControllerBot") as RuntimeAnimatorController;
         gameObject.GetComponent<Animator>().SetTrigger("Gun");
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(1.5f);
         gameObject.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("Idle") as RuntimeAnimatorController;
     }
     IEnumerator Rifle()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
         weapon[2].SetActive(true);
         Destroy(Instantiate(Resources.Load("SelectWeapon"), weapon[0].transform.position, Quaternion.identity), 0.25f);
         gameObject.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("RifleControllerBot") as RuntimeAnimatorController;
         gameObject.GetComponent<Animator>().SetTrigger("Rifle");
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(1.5f);
         gameObject.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("Idle") as RuntimeAnimatorController;
     }
     IEnumerator Sniper()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
         weapon[3].SetActive(true);
         Destroy(Instantiate(Resources.Load("SelectWeapon"), weapon[0].transform.position, Quaternion.identity), 0.25f);
         gameObject.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("SniperControllerBot") as RuntimeAnimatorController;
         gameObject.GetComponent<Animator>().SetTrigger("Sniper");
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
         gameObject.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("Idle") as RuntimeAnimatorController;
     }
     IEnumerator Bomb()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.5f);
         weapon[4].SetActive(true);
         Destroy(Instantiate(Resources.Load("SelectWeapon"), weapon[0].transform.position, Quaternion.identity), 0.25f);
         gameObject.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("GrenadeControllerBot") as RuntimeAnimatorController;
         gameObject.GetComponent<Animator>().SetTrigger("Grenade");
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2.5f);
         gameObject.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("Idle") as RuntimeAnimatorController;
     }
 

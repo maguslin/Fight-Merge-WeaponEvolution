@@ -542,11 +542,15 @@ public class GridManagerState2 : MonoBehaviour
 
         if (matchCount<=3)
         {
-            GameObject item = Instantiate(Resources.Load<GameObject>("Bow"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
-            item.transform.DOMove(new Vector3(weapons[0].transform.position.x, weapons[0].transform.position.y, 1), 2f);
-            Destroy(item, 2f);
+            if (!GameObject.FindGameObjectWithTag("CloneWeapon"))
+            {
+                GameObject item = Instantiate(Resources.Load<GameObject>("Bow"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
+                item.transform.DOMove(new Vector3(weapons[0].transform.position.x, weapons[0].transform.position.y, 1), 1f);
+                Destroy(item, 1f);
+            }
+
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         weapons[0].SetActive(true);
         weapons[1].SetActive(false);
         weapons[2].SetActive(false);
@@ -562,11 +566,15 @@ public class GridManagerState2 : MonoBehaviour
     {
         if (matchCount <= 3)
         {
-            GameObject item = Instantiate(Resources.Load<GameObject>("Gun"), new Vector3(0, -2, -1), Quaternion.Euler(0, -180, 0));
-            item.transform.DOMove(new Vector3(weapons[1].transform.position.x, weapons[1].transform.position.y, 1), 2f);
-            Destroy(item, 2f);
+            if (!GameObject.FindGameObjectWithTag("CloneWeapon"))
+            {
+                GameObject item = Instantiate(Resources.Load<GameObject>("Gun"), new Vector3(0, -2, -1), Quaternion.Euler(0, -180, 0));
+                item.transform.DOMove(new Vector3(weapons[1].transform.position.x, weapons[1].transform.position.y, 1), 1f);
+                Destroy(item, 1f);
+            }
+
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(true);
         weapons[2].SetActive(false);
@@ -582,11 +590,15 @@ public class GridManagerState2 : MonoBehaviour
     {
         if (matchCount <= 3)
         {
-            GameObject item = Instantiate(Resources.Load<GameObject>("Rifle"), new Vector3(0, -2, -1), Quaternion.Euler(0, 90, 0));
-            item.transform.DOMove(new Vector3(weapons[2].transform.position.x, weapons[2].transform.position.y, 1), 2f);
-            Destroy(item, 2f);
+            if (!GameObject.FindGameObjectWithTag("CloneWeapon"))
+            {
+                GameObject item = Instantiate(Resources.Load<GameObject>("Rifle"), new Vector3(0, -2, -1), Quaternion.Euler(0, 90, 0));
+                item.transform.DOMove(new Vector3(weapons[2].transform.position.x, weapons[2].transform.position.y, 1), 1f);
+                Destroy(item, 1f);
+            }
+
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(false);
         weapons[2].SetActive(true);
@@ -602,11 +614,16 @@ public class GridManagerState2 : MonoBehaviour
     {
         if (matchCount <= 3)
         {
-            GameObject item = Instantiate(Resources.Load<GameObject>("Sniper"), new Vector3(0, -2, -1), Quaternion.Euler(0, 180, 0));
-            item.transform.DOMove(new Vector3(weapons[3].transform.position.x, weapons[3].transform.position.y, 1), 2f);
-            Destroy(item, 2f);
+            if (!GameObject.FindGameObjectWithTag("CloneWeapon"))
+            {
+                GameObject item = Instantiate(Resources.Load<GameObject>("Sniper"), new Vector3(0, -2, -1), Quaternion.Euler(0, 180, 0));
+                item.transform.DOMove(new Vector3(weapons[3].transform.position.x, weapons[3].transform.position.y, 1), 1f);
+                Destroy(item, 1f);
+            }
+
+
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(false);
         weapons[2].SetActive(false);
@@ -622,11 +639,15 @@ public class GridManagerState2 : MonoBehaviour
     {
         if (matchCount <= 3)
         {
-            GameObject item = Instantiate(Resources.Load<GameObject>("Grenade"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, 0));
-            item.transform.DOMove(new Vector3(weapons[4].transform.position.x, weapons[4].transform.position.y, 1), 2f);
-            Destroy(item, 2f);
+            if (!GameObject.FindGameObjectWithTag("CloneWeapon"))
+            {
+                GameObject item = Instantiate(Resources.Load<GameObject>("Grenade"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, 0));
+                item.transform.DOMove(new Vector3(weapons[4].transform.position.x, weapons[4].transform.position.y, 1), 1f);
+                Destroy(item, 1f);
+            }
+
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(false);
         weapons[2].SetActive(false);
