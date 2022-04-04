@@ -181,9 +181,9 @@ public class BotManagerState2 : MonoBehaviour
     //Bot Player Animation Clip Script
     IEnumerator Bow()
     {
-        yield return new WaitForSeconds(4.5f);
-        weapon[0].SetActive(true);
+        yield return new WaitForSeconds(3f);
         Destroy(Instantiate(Resources.Load("SelectWeapon"), weapon[0].transform.position, Quaternion.identity), 0.25f);
+        weapon[0].SetActive(true);
         gameObject.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("BowControllerBot") as RuntimeAnimatorController;
         gameObject.GetComponent<Animator>().SetTrigger("Arrow");
         yield return new WaitForSeconds(4.5f);
@@ -191,9 +191,9 @@ public class BotManagerState2 : MonoBehaviour
     }
     IEnumerator Gun()
     {
-        yield return new WaitForSeconds(0.5f);
-        weapon[1].SetActive(true);
+        yield return new WaitForSeconds(1.5f);
         Destroy(Instantiate(Resources.Load("SelectWeapon"), weapon[0].transform.position, Quaternion.identity), 0.25f);
+        weapon[1].SetActive(true);
         gameObject.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("GunControllerBot") as RuntimeAnimatorController;
         gameObject.GetComponent<Animator>().SetTrigger("Gun");
         yield return new WaitForSeconds(1.5f);
@@ -202,8 +202,8 @@ public class BotManagerState2 : MonoBehaviour
     IEnumerator Rifle()
     {
         yield return new WaitForSeconds(1.5f);
-        weapon[2].SetActive(true);
         Destroy(Instantiate(Resources.Load("SelectWeapon"), weapon[0].transform.position, Quaternion.identity), 0.25f);
+        weapon[2].SetActive(true);
         gameObject.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("RifleControllerBot") as RuntimeAnimatorController;
         gameObject.GetComponent<Animator>().SetTrigger("Rifle");
         yield return new WaitForSeconds(1.5f);
@@ -211,9 +211,9 @@ public class BotManagerState2 : MonoBehaviour
     }
     IEnumerator Sniper()
     {
-        yield return new WaitForSeconds(0.5f);
-        weapon[3].SetActive(true);
+        yield return new WaitForSeconds(1.5f);
         Destroy(Instantiate(Resources.Load("SelectWeapon"), weapon[0].transform.position, Quaternion.identity), 0.25f);
+        weapon[3].SetActive(true);
         gameObject.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("SniperControllerBot") as RuntimeAnimatorController;
         gameObject.GetComponent<Animator>().SetTrigger("Sniper");
         yield return new WaitForSeconds(2f);
@@ -222,8 +222,8 @@ public class BotManagerState2 : MonoBehaviour
     IEnumerator Bomb()
     {
         yield return new WaitForSeconds(2.5f);
-        weapon[4].SetActive(true);
         Destroy(Instantiate(Resources.Load("SelectWeapon"), weapon[0].transform.position, Quaternion.identity), 0.25f);
+        weapon[4].SetActive(true);
         gameObject.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("GrenadeControllerBot") as RuntimeAnimatorController;
         gameObject.GetComponent<Animator>().SetTrigger("Grenade");
         yield return new WaitForSeconds(2.5f);

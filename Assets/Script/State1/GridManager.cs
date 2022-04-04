@@ -212,7 +212,7 @@ public class GridManager : MonoBehaviour
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Billiard());
-                        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[1].transform.position, Quaternion.identity), 0.5f);
+                        StopCoroutine(Billiard());
 
                     }
 
@@ -222,8 +222,8 @@ public class GridManager : MonoBehaviour
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Knife());
-                        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[2].transform.position, Quaternion.identity), 0.5f);
-                       
+                        StopCoroutine(Knife());
+
                     }
 
                     if (Sprites[2] == current.sprite)
@@ -232,8 +232,8 @@ public class GridManager : MonoBehaviour
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Sword());
-                        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[3].transform.position, Quaternion.identity), 0.5f);
-                        
+                        StopCoroutine(Sword());
+
                     }
 
                     if (Sprites[3] == current.sprite && Input.GetMouseButton(0))
@@ -242,8 +242,8 @@ public class GridManager : MonoBehaviour
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Spear());
-                        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[4].transform.position, Quaternion.identity), 0.5f);
-                      
+                        StopCoroutine(Spear());
+
 
                     }
 
@@ -253,8 +253,8 @@ public class GridManager : MonoBehaviour
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Branch());
-                        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[0].transform.position, Quaternion.identity), 0.5f);
-                        
+                        StopCoroutine(Branch());
+
                     }
 
                     matchCount += horizontalMatches.Count + 1;
@@ -271,8 +271,8 @@ public class GridManager : MonoBehaviour
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Billiard());
-                        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[1].transform.position, Quaternion.identity), 0.5f);
-                        
+                        StopCoroutine(Billiard());
+
 
                     }
                     if (Sprites[1] == current.sprite )
@@ -280,9 +280,9 @@ public class GridManager : MonoBehaviour
                         matchedTiles.UnionWith(horizontalMatches);
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
-                        StartCoroutine(Knife()); 
-                        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[2].transform.position, Quaternion.identity), 0.5f);
-                       
+                        StartCoroutine(Knife());
+                        StopCoroutine(Knife());
+
 
                     }
                     if (Sprites[2] == current.sprite )
@@ -291,9 +291,8 @@ public class GridManager : MonoBehaviour
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Sword());
-                        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[3].transform.position, Quaternion.identity), 0.5f);
-                      
-
+                        StopCoroutine(Sword());
+                     
                     }
                     if (Sprites[3] == current.sprite)
                     {
@@ -301,8 +300,8 @@ public class GridManager : MonoBehaviour
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Spear());
-                        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[4].transform.position, Quaternion.identity), 0.5f);
-                        
+                        StopCoroutine(Spear());
+
 
                     }
                     if (Sprites[4] == current.sprite)
@@ -311,8 +310,7 @@ public class GridManager : MonoBehaviour
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Branch()); 
-                        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[0].transform.position, Quaternion.identity), 0.5f);
-                        
+                        StopCoroutine(Branch());
                     }
 
                     matchCount += verticalMatches.Count+1;
@@ -533,11 +531,16 @@ public class GridManager : MonoBehaviour
     {
         if (matchCount <= 3)
         {
-            GameObject item = Instantiate(Resources.Load<GameObject>("Branch"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
-            item.transform.DOMove(new Vector3(weapons[0].transform.position.x, weapons[0].transform.position.y, 1), 2f);
-            Destroy(item, 2f);
+            if (!GameObject.FindGameObjectWithTag("CloneWeapon"))
+            {
+                GameObject item = Instantiate(Resources.Load<GameObject>("Branch"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
+                item.transform.DOMove(new Vector3(weapons[0].transform.position.x, weapons[0].transform.position.y, 1), 1F);
+                Destroy(item, 1F);
+            }
+
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1F);
+        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[0].transform.position, Quaternion.identity), 0.5f);
         weapons[0].SetActive(true);
         weapons[1].SetActive(false);
         weapons[2].SetActive(false);
@@ -553,11 +556,16 @@ public class GridManager : MonoBehaviour
     {
         if (matchCount <= 3)
         {
-            GameObject item = Instantiate(Resources.Load<GameObject>("Billiard"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
-            item.transform.DOMove(new Vector3(weapons[1].transform.position.x, weapons[1].transform.position.y, 1), 2f);
-            Destroy(item, 2f);
+            if (!GameObject.FindGameObjectWithTag("CloneWeapon"))
+            {
+                GameObject item = Instantiate(Resources.Load<GameObject>("Billiard"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
+                item.transform.DOMove(new Vector3(weapons[1].transform.position.x, weapons[1].transform.position.y, 1), 1F);
+                Destroy(item, 1F);
+
+            }
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1F);
+        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[1].transform.position, Quaternion.identity), 0.5f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(true);
         weapons[2].SetActive(false);
@@ -574,11 +582,16 @@ public class GridManager : MonoBehaviour
 
         if (matchCount <= 3)
         {
-            GameObject item = Instantiate(Resources.Load<GameObject>("Knife"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
-            item.transform.DOMove(new Vector3(weapons[2].transform.position.x, weapons[2].transform.position.y, 1), 2f);
-            Destroy(item, 2f);
+            if (!GameObject.FindGameObjectWithTag("CloneWeapon"))
+            {
+                GameObject item = Instantiate(Resources.Load<GameObject>("Knife"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
+                item.transform.DOMove(new Vector3(weapons[2].transform.position.x, weapons[2].transform.position.y, 1), 1F);
+                Destroy(item, 1F);
+
+            }
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1F);
+        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[2].transform.position, Quaternion.identity), 0.5f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(false);
         weapons[2].SetActive(true);
@@ -595,11 +608,16 @@ public class GridManager : MonoBehaviour
 
         if (matchCount <= 3)
         {
-            GameObject item = Instantiate(Resources.Load<GameObject>("Sword"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
-            item.transform.DOMove(new Vector3(weapons[3].transform.position.x, weapons[3].transform.position.y, 1), 2f);
-            Destroy(item, 2f);
+            if (!GameObject.FindGameObjectWithTag("CloneWeapon"))
+            {
+                GameObject item = Instantiate(Resources.Load<GameObject>("Sword"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
+                item.transform.DOMove(new Vector3(weapons[3].transform.position.x, weapons[3].transform.position.y, 1), 1F);
+                Destroy(item, 1F);
+
+            }
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1F);
+        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[3].transform.position, Quaternion.identity), 0.5f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(false);
         weapons[2].SetActive(false);
@@ -616,11 +634,16 @@ public class GridManager : MonoBehaviour
        
         if (matchCount <= 3)
         {
-            GameObject item = Instantiate(Resources.Load<GameObject>("Spear"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
-            item.transform.DOMove(new Vector3(weapons[4].transform.position.x, weapons[4].transform.position.y, 1), 2f);
-            Destroy(item, 2f);
+            if (!GameObject.FindGameObjectWithTag("CloneWeapon"))
+            {
+                GameObject item = Instantiate(Resources.Load<GameObject>("Spear"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
+                item.transform.DOMove(new Vector3(weapons[4].transform.position.x, weapons[4].transform.position.y, 1), 1F);
+                Destroy(item, 1F);
+
+            }
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1F);
+        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[4].transform.position, Quaternion.identity), 0.5f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(false);
         weapons[2].SetActive(false);

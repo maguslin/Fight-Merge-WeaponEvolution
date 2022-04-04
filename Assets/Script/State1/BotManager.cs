@@ -182,9 +182,9 @@ public class BotManager : MonoBehaviour
     //Bot Player Animation Clip Script
     IEnumerator Branch()
     {
+        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapon[0].transform.position, Quaternion.identity), 0.25f);
         yield return new WaitForSeconds(1.1f);
         weapon[0].SetActive(true);
-        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapon[0].transform.position, Quaternion.identity), 0.25f);
         gameObject.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("BranchControllerBot") as RuntimeAnimatorController;
         gameObject.GetComponent<Animator>().SetTrigger("Branch");
         yield return new WaitForSeconds(2f);
@@ -192,9 +192,9 @@ public class BotManager : MonoBehaviour
     }
     IEnumerator Billiard()
     {
+        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapon[1].transform.position, Quaternion.identity), 0.25f);
         yield return new WaitForSeconds(1.1f);
         weapon[1].SetActive(true);
-        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapon[1].transform.position, Quaternion.identity), 0.25f);
         gameObject.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("BilliardControllerBot") as RuntimeAnimatorController;
         gameObject.GetComponent<Animator>().SetTrigger("Billiard");
         yield return new WaitForSeconds(2f);
@@ -202,9 +202,9 @@ public class BotManager : MonoBehaviour
     }
     IEnumerator Knife()
     {
+        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapon[2].transform.position, Quaternion.identity), 0.25f);
         yield return new WaitForSeconds(1.1f);
         weapon[2].SetActive(true);
-        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapon[2].transform.position, Quaternion.identity), 0.25f);
         gameObject.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("KnifeControllerBot") as RuntimeAnimatorController;
         gameObject.GetComponent<Animator>().SetTrigger("Knife");
         yield return new WaitForSeconds(2f);
@@ -212,9 +212,9 @@ public class BotManager : MonoBehaviour
     }
     IEnumerator Sword()
     {
+        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapon[3].transform.position, Quaternion.identity), 0.25f);
         yield return new WaitForSeconds(1.1f);
         weapon[3].SetActive(true);
-        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapon[3].transform.position, Quaternion.identity), 0.25f);
         gameObject.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("SwordControllerBot") as RuntimeAnimatorController;
         gameObject.GetComponent<Animator>().SetTrigger("Sword");
         yield return new WaitForSeconds(2f);
@@ -222,9 +222,9 @@ public class BotManager : MonoBehaviour
     }
     IEnumerator Spear()
     {
+        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapon[4].transform.position, Quaternion.identity), 0.25f);
         yield return new WaitForSeconds(1.25f);
         weapon[4].SetActive(true);
-        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapon[4].transform.position, Quaternion.identity), 0.25f);
         gameObject.GetComponent<Animator>().runtimeAnimatorController = Resources.Load("SpearControllerBot") as RuntimeAnimatorController;
         gameObject.GetComponent<Animator>().SetTrigger("Spear");
         yield return new WaitForSeconds(2f);

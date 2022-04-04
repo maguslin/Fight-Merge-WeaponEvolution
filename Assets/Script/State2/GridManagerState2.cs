@@ -210,9 +210,8 @@ public class GridManagerState2 : MonoBehaviour
                     {
                         matchedTiles.UnionWith(horizontalMatches);
                         matchedTiles.Add(current);
-                        StartCoroutine(Arrow());
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
-                        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[0].transform.position, Quaternion.identity), 0.25f);
+                        StartCoroutine(Arrow());
 
                     }
 
@@ -222,7 +221,6 @@ public class GridManagerState2 : MonoBehaviour
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Gun());
-                        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[1].transform.position, Quaternion.identity), 0.25f);
 
                     }
 
@@ -230,8 +228,8 @@ public class GridManagerState2 : MonoBehaviour
                     {
                         matchedTiles.UnionWith(horizontalMatches);
                         matchedTiles.Add(current);
+                        MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Rifle());
-                        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[2].transform.position, Quaternion.identity), 0.25f);
 
                     }
 
@@ -241,7 +239,6 @@ public class GridManagerState2 : MonoBehaviour
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Sniper());
-                        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[3].transform.position, Quaternion.identity), 0.25f);
 
 
                     }
@@ -252,7 +249,6 @@ public class GridManagerState2 : MonoBehaviour
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Bomb());
-                        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[4].transform.position, Quaternion.identity), 0.25f);
 
                     }
 
@@ -270,7 +266,6 @@ public class GridManagerState2 : MonoBehaviour
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Arrow());
-                        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[0].transform.position, Quaternion.identity), 0.25f);
 
 
                     }
@@ -280,7 +275,6 @@ public class GridManagerState2 : MonoBehaviour
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Gun());
-                        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[1].transform.position, Quaternion.identity), 0.25f);
 
 
                     }
@@ -290,7 +284,6 @@ public class GridManagerState2 : MonoBehaviour
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Rifle());
-                        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[2].transform.position, Quaternion.identity), 0.25f);
 
 
                     }
@@ -300,7 +293,6 @@ public class GridManagerState2 : MonoBehaviour
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Sniper());
-                        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[3].transform.position, Quaternion.identity), 0.25f);
 
 
                     }
@@ -310,7 +302,6 @@ public class GridManagerState2 : MonoBehaviour
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Bomb());
-                        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[4].transform.position, Quaternion.identity), 0.25f);
 
                     }
 
@@ -551,6 +542,7 @@ public class GridManagerState2 : MonoBehaviour
 
         }
         yield return new WaitForSeconds(1f);
+        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[0].transform.position, Quaternion.identity), 0.25f);
         weapons[0].SetActive(true);
         weapons[1].SetActive(false);
         weapons[2].SetActive(false);
@@ -575,6 +567,7 @@ public class GridManagerState2 : MonoBehaviour
 
         }
         yield return new WaitForSeconds(1f);
+        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[1].transform.position, Quaternion.identity), 0.25f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(true);
         weapons[2].SetActive(false);
@@ -599,6 +592,7 @@ public class GridManagerState2 : MonoBehaviour
 
         }
         yield return new WaitForSeconds(1f);
+        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[2].transform.position, Quaternion.identity), 0.25f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(false);
         weapons[2].SetActive(true);
@@ -624,6 +618,7 @@ public class GridManagerState2 : MonoBehaviour
 
         }
         yield return new WaitForSeconds(1f);
+        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[3].transform.position, Quaternion.identity), 0.25f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(false);
         weapons[2].SetActive(false);
@@ -648,6 +643,7 @@ public class GridManagerState2 : MonoBehaviour
 
         }
         yield return new WaitForSeconds(1f);
+        Destroy(Instantiate(Resources.Load("SelectWeapon"), weapons[4].transform.position, Quaternion.identity), 0.25f);
         weapons[0].SetActive(false);
         weapons[1].SetActive(false);
         weapons[2].SetActive(false);
