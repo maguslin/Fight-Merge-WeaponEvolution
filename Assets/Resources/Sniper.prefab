@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4267604862572017723}
   - component: {fileID: 6097655672402051912}
   - component: {fileID: 2206186829134436467}
+  - component: {fileID: 561305249928970446}
   m_Layer: 0
   m_Name: Sniper
   m_TagString: CloneWeaponST2
@@ -25,15 +26,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3373108412251121555}
-  m_LocalRotation: {x: -0.6108749, y: 0.7066434, z: 0.29781133, w: 0.19696566}
-  m_LocalPosition: {x: -7.8, y: 32.2, z: 23.4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 5737260368457363997}
   - {fileID: 5547746619013883474}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -41.417004, y: 186.545, z: -84.162}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6097655672402051912
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -82,6 +83,25 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!95 &561305249928970446
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3373108412251121555}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1878367ad1fda6e43bab0bfa8e7491c8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6858205611027425051
 GameObject:
   m_ObjectHideFlags: 0

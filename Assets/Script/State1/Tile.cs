@@ -27,40 +27,40 @@ public class Tile : MonoBehaviour
         Renderer.color = Color.white;
     }
 
-    public void OnMouseDown()
+    void OnMouseEnter()
     {
         if (selected != null)
         {
+
             if (selected == this)
                 return;
+
             selected.Unselect();
             if (Vector2Int.Distance(selected.Position, Position) == 1)
             {
                 GridManager.Instance.SwapTiles(Position, selected.Position);
                 selected = null;
             }
+            else if (true)
+            {
+
+            }
             else
             {
-               ;
                 selected = this;
                 Select();
             }
         }
-        else
+    }
+
+    public void OnMouseDown()
+    {
+        if (selected == null)
         {
-           
             selected = this;
             Select();
-        }
-
-       /* if (UIManager.instance.gameWinPanel.activeSelf)
-        {
-            selected.Unselect();
-        }*/
+        } 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        
-    }
+
 }

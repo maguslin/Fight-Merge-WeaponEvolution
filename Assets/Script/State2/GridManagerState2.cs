@@ -535,8 +535,7 @@ public class GridManagerState2 : MonoBehaviour
         {
             if (!GameObject.FindGameObjectWithTag("CloneWeapon"))
             {
-                GameObject item = Instantiate(Resources.Load<GameObject>("Bow"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
-                item.transform.DOMove(new Vector3(weapons[0].transform.position.x, weapons[0].transform.position.y, 1), 1f);
+                GameObject item = Instantiate(Resources.Load<GameObject>("Bow"),weapons[0].transform.position, Quaternion.Euler(0, 0, -90));
                 Destroy(item, 1f);
             }
 
@@ -560,8 +559,7 @@ public class GridManagerState2 : MonoBehaviour
         {
             if (!GameObject.FindGameObjectWithTag("CloneWeapon"))
             {
-                GameObject item = Instantiate(Resources.Load<GameObject>("Gun"), new Vector3(0, -2, -1), Quaternion.Euler(0, -180, 0));
-                item.transform.DOMove(new Vector3(weapons[1].transform.position.x, weapons[1].transform.position.y, 1), 1f);
+                GameObject item = Instantiate(Resources.Load<GameObject>("Gun"),weapons[1].transform.position, Quaternion.Euler(0, -180, 0));
                 Destroy(item, 1f);
             }
 
@@ -585,8 +583,7 @@ public class GridManagerState2 : MonoBehaviour
         {
             if (!GameObject.FindGameObjectWithTag("CloneWeapon"))
             {
-                GameObject item = Instantiate(Resources.Load<GameObject>("Rifle"), new Vector3(0, -2, -1), Quaternion.Euler(0, 90, 0));
-                item.transform.DOMove(new Vector3(weapons[2].transform.position.x, weapons[2].transform.position.y, 1), 1f);
+                GameObject item = Instantiate(Resources.Load<GameObject>("Rifle"), weapons[2].transform.position, Quaternion.Euler(0, 90, 0));
                 Destroy(item, 1f);
             }
 
@@ -610,9 +607,8 @@ public class GridManagerState2 : MonoBehaviour
         {
             if (!GameObject.FindGameObjectWithTag("CloneWeapon"))
             {
-                GameObject item = Instantiate(Resources.Load<GameObject>("Sniper"), new Vector3(0, -2, -1), Quaternion.Euler(0, 180, 0));
-                item.transform.DOMove(new Vector3(weapons[3].transform.position.x, weapons[3].transform.position.y, 1), 1f);
-                Destroy(item, 1f);
+                GameObject item = Instantiate(Resources.Load<GameObject>("Sniper"), weapons[3].transform.position, Quaternion.Euler(0, 180, 0));
+                Destroy(item, 1.2f);
             }
 
 
@@ -636,8 +632,7 @@ public class GridManagerState2 : MonoBehaviour
         {
             if (!GameObject.FindGameObjectWithTag("CloneWeapon"))
             {
-                GameObject item = Instantiate(Resources.Load<GameObject>("Grenade"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, 0));
-                item.transform.DOMove(new Vector3(weapons[4].transform.position.x, weapons[4].transform.position.y, 1), 1f);
+                GameObject item = Instantiate(Resources.Load<GameObject>("Grenade"), weapons[4].transform.position, Quaternion.Euler(0, 0, 0));
                 Destroy(item, 1f);
             }
 

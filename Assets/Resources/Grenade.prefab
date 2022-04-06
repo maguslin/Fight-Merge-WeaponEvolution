@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 1512876478584769635}
   - component: {fileID: 8628235549311136413}
   - component: {fileID: 1000964331134617223}
+  - component: {fileID: 1527849761202047951}
   m_Layer: 0
   m_Name: Grenade
   m_TagString: CloneWeaponST2
@@ -183,8 +184,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6882363692069955391}
-  m_LocalRotation: {x: 0.7270168, y: 0.36004323, z: -0.17186618, w: 0.558818}
-  m_LocalPosition: {x: -3.9, y: 2.2, z: 9}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9010623696119956695}
@@ -192,7 +193,7 @@ Transform:
   - {fileID: 2130299045654264427}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 110.561005, y: -25.734985, z: -70.68201}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8628235549311136413
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -240,6 +241,25 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!95 &1527849761202047951
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6882363692069955391}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3024badc5e702ed499382645bac1789e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8124326107931462547
 GameObject:
   m_ObjectHideFlags: 0

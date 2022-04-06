@@ -7,7 +7,7 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
 
-
+    public GameObject OnboardText;
     public Text levelText;
     float speed=20;
     [Header("Bot UI")]
@@ -70,6 +70,8 @@ public class UIManager : MonoBehaviour
         }*/
         levelText.text = "LEVEL " + PlayerPrefs.GetInt("Level");
         //ElephantSDK.Elephant.LevelStarted(PlayerPrefs.GetInt("Level"));
+
+        Destroy(OnboardText, 3f);
     }
 
     // Update is called once per frame

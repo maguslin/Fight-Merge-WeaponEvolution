@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2187733574728205468}
   - component: {fileID: 167170418494282821}
   - component: {fileID: 4377262714347182858}
+  - component: {fileID: 1055328152401723304}
   m_Layer: 0
   m_Name: Bow
   m_TagString: CloneWeaponST2
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6922833180478254138}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6.9, y: -2.1, z: 14.4}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 1348516379429664844}
   m_Father: {fileID: 0}
@@ -81,6 +82,25 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!95 &1055328152401723304
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6922833180478254138}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 754bb49e455fc4c4bb062be87382eb22, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &7582900393913540069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -136,37 +156,37 @@ PrefabInstance:
     - target: {fileID: 8902837166792615337, guid: 9b891a89486827e488ec033edc2a48bd,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.58847487
+      value: 0.6651208
       objectReference: {fileID: 0}
     - target: {fileID: 8902837166792615337, guid: 9b891a89486827e488ec033edc2a48bd,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.31127176
+      value: -0.028408594
       objectReference: {fileID: 0}
     - target: {fileID: 8902837166792615337, guid: 9b891a89486827e488ec033edc2a48bd,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.32031077
+      value: 0.0001328555
       objectReference: {fileID: 0}
     - target: {fileID: 8902837166792615337, guid: 9b891a89486827e488ec033edc2a48bd,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.6739498
+      value: 0.74619526
       objectReference: {fileID: 0}
     - target: {fileID: 8902837166792615337, guid: 9b891a89486827e488ec033edc2a48bd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 3.7500002
+      value: -2.177
       objectReference: {fileID: 0}
     - target: {fileID: 8902837166792615337, guid: 9b891a89486827e488ec033edc2a48bd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -52.964
+      value: -2.421
       objectReference: {fileID: 0}
     - target: {fileID: 8902837166792615337, guid: 9b891a89486827e488ec033edc2a48bd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 95.878006
+      value: 96.622
       objectReference: {fileID: 0}
     - target: {fileID: 9018365015184843873, guid: 9b891a89486827e488ec033edc2a48bd,
         type: 3}

@@ -27,26 +27,35 @@ public class TileState2 : MonoBehaviour
         Renderer.color = Color.white;
     }
 
-    public void OnMouseDown()
+    void OnMouseEnter()
     {
         if (selected != null)
         {
+
             if (selected == this)
                 return;
+
             selected.Unselect();
             if (Vector2Int.Distance(selected.Position, Position) == 1)
             {
                 GridManagerState2.Instance.SwapTiles(Position, selected.Position);
                 selected = null;
             }
+            else if (true)
+            {
+
+            }
             else
             {
-               ;
                 selected = this;
                 Select();
             }
         }
-        else
+    }
+
+    public void OnMouseDown()
+    {
+        if (selected == null)
         {
             selected = this;
             Select();

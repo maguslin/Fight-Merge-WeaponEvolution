@@ -26,8 +26,12 @@ public class GridManager : MonoBehaviour
     public int StartingMoves = 50;
     private int _numMoves;
     public int matchCount;
- 
 
+    public void Update()
+    {
+      
+
+    }
 
     public int NumMoves
     {
@@ -68,7 +72,6 @@ public class GridManager : MonoBehaviour
         instance = this;
         Score = 0;
         NumMoves = StartingMoves;
-
         DOTween.Init();
     }
 
@@ -533,8 +536,7 @@ public class GridManager : MonoBehaviour
         {
             if (!GameObject.FindGameObjectWithTag("CloneWeapon"))
             {
-                GameObject item = Instantiate(Resources.Load<GameObject>("Branch"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
-                item.transform.DOMove(new Vector3(weapons[0].transform.position.x, weapons[0].transform.position.y, 1), 1F);
+                GameObject item = Instantiate(Resources.Load<GameObject>("Branch"), weapons[0].transform.position, Quaternion.Euler(0, 0, -90));
                 Destroy(item, 1F);
             }
 
@@ -558,8 +560,7 @@ public class GridManager : MonoBehaviour
         {
             if (!GameObject.FindGameObjectWithTag("CloneWeapon"))
             {
-                GameObject item = Instantiate(Resources.Load<GameObject>("Billiard"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
-                item.transform.DOMove(new Vector3(weapons[1].transform.position.x, weapons[1].transform.position.y, 1), 1F);
+                GameObject item = Instantiate(Resources.Load<GameObject>("Billiard"),weapons[1].transform.position, Quaternion.Euler(0, 0, -90));
                 Destroy(item, 1F);
 
             }
@@ -584,9 +585,8 @@ public class GridManager : MonoBehaviour
         {
             if (!GameObject.FindGameObjectWithTag("CloneWeapon"))
             {
-                GameObject item = Instantiate(Resources.Load<GameObject>("Knife"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
-                item.transform.DOMove(new Vector3(weapons[2].transform.position.x, weapons[2].transform.position.y, 1), 1F);
-                Destroy(item, 1F);
+                GameObject item = Instantiate(Resources.Load<GameObject>("Knife"), weapons[2].transform.position, Quaternion.Euler(0, 0, -90));
+                Destroy(item, 1.2F);
 
             }
         }
@@ -610,8 +610,7 @@ public class GridManager : MonoBehaviour
         {
             if (!GameObject.FindGameObjectWithTag("CloneWeapon"))
             {
-                GameObject item = Instantiate(Resources.Load<GameObject>("Sword"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
-                item.transform.DOMove(new Vector3(weapons[3].transform.position.x, weapons[3].transform.position.y, 1), 1F);
+                GameObject item = Instantiate(Resources.Load<GameObject>("Sword"),weapons[3].transform.position, Quaternion.Euler(0, 0, -90));
                 Destroy(item, 1F);
 
             }
@@ -636,8 +635,7 @@ public class GridManager : MonoBehaviour
         {
             if (!GameObject.FindGameObjectWithTag("CloneWeapon"))
             {
-                GameObject item = Instantiate(Resources.Load<GameObject>("Spear"), new Vector3(0, -2, -1), Quaternion.Euler(0, 0, -90));
-                item.transform.DOMove(new Vector3(weapons[4].transform.position.x, weapons[4].transform.position.y, 1), 1F);
+                GameObject item = Instantiate(Resources.Load<GameObject>("Spear"), weapons[4].transform.position, Quaternion.Euler(0, 0, -90));
                 Destroy(item, 1F);
 
             }
