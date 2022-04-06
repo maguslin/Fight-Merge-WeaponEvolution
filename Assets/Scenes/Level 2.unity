@@ -1187,6 +1187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d9f8557a7a6f0f4b889904d46783982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnboardText: {fileID: 0}
   levelText: {fileID: 2111686204}
   Bothealth: 100
   damageText: {fileID: 1676068783}
@@ -6412,17 +6413,17 @@ PrefabInstance:
     - target: {fileID: 1636286351164141040, guid: b816531143bc05f4c9c8dad5ab0a4868,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -100.8
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1636286351164141040, guid: b816531143bc05f4c9c8dad5ab0a4868,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -180.6
+      value: -9.3
       objectReference: {fileID: 0}
     - target: {fileID: 1636286351164141040, guid: b816531143bc05f4c9c8dad5ab0a4868,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -158.6
+      value: 6.4
       objectReference: {fileID: 0}
     - target: {fileID: 1636286351164141040, guid: b816531143bc05f4c9c8dad5ab0a4868,
         type: 3}
@@ -6467,7 +6468,7 @@ PrefabInstance:
     - target: {fileID: 6757793835260282540, guid: b816531143bc05f4c9c8dad5ab0a4868,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b816531143bc05f4c9c8dad5ab0a4868, type: 3}

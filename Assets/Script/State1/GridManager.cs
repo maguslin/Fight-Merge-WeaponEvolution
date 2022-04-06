@@ -215,7 +215,6 @@ public class GridManager : MonoBehaviour
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Billiard());
-                        StopCoroutine(Billiard());
 
                     }
 
@@ -235,7 +234,6 @@ public class GridManager : MonoBehaviour
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Sword());
-                        StopCoroutine(Sword());
 
                     }
 
@@ -245,7 +243,6 @@ public class GridManager : MonoBehaviour
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Spear());
-                        StopCoroutine(Spear());
 
 
                     }
@@ -256,7 +253,6 @@ public class GridManager : MonoBehaviour
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Branch());
-                        StopCoroutine(Branch());
 
                     }
 
@@ -274,7 +270,6 @@ public class GridManager : MonoBehaviour
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Billiard());
-                        StopCoroutine(Billiard());
 
 
                     }
@@ -284,7 +279,6 @@ public class GridManager : MonoBehaviour
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Knife());
-                        StopCoroutine(Knife());
 
 
                     }
@@ -294,7 +288,6 @@ public class GridManager : MonoBehaviour
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Sword());
-                        StopCoroutine(Sword());
                      
                     }
                     if (Sprites[3] == current.sprite)
@@ -303,7 +296,6 @@ public class GridManager : MonoBehaviour
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Spear());
-                        StopCoroutine(Spear());
 
 
                     }
@@ -313,7 +305,6 @@ public class GridManager : MonoBehaviour
                         matchedTiles.Add(current);
                         MMVibrationManager.Haptic(HapticTypes.SoftImpact);
                         StartCoroutine(Branch()); 
-                        StopCoroutine(Branch());
                     }
 
                     matchCount += verticalMatches.Count+1;
